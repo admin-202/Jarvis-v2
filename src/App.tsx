@@ -122,6 +122,25 @@ function App() {
                     AI Voice Assistant
                   </div>
                 </div>
+                
+                {/* Central Pulsing Button */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button className="relative w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-lg shadow-cyan-400/50 hover:shadow-cyan-400/70 transition-all duration-300 group animate-pulse">
+                    {/* Inner glow effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-300 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                    
+                    {/* Pulsing ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-cyan-400 animate-ping opacity-75" />
+                    
+                    {/* Button content */}
+                    <div className="relative z-10 flex items-center justify-center w-full h-full">
+                      <div className="w-3 h-3 rounded-full bg-white animate-pulse" />
+                    </div>
+                    
+                    {/* Outer glow ring */}
+                    <div className="absolute -inset-2 rounded-full border border-cyan-400/30 animate-spin" style={{ animationDuration: '3s' }} />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
