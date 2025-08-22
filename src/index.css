@@ -40,6 +40,10 @@
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
+  
+  .animate-intense-pulse {
+    animation: intense-pulse 1.5s ease-in-out infinite;
+  }
 }
 
 @keyframes glow {
@@ -79,6 +83,23 @@
   50% {
     box-shadow: 0 0 30px rgba(6, 182, 212, 0.8), 0 0 60px rgba(6, 182, 212, 0.5);
     transform: scale(1.05);
+  }
+}
+
+@keyframes intense-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(6, 182, 212, 0.6), 
+      0 0 40px rgba(6, 182, 212, 0.4),
+      0 0 60px rgba(6, 182, 212, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(6, 182, 212, 0.9), 
+      0 0 60px rgba(6, 182, 212, 0.7),
+      0 0 90px rgba(6, 182, 212, 0.4);
+    transform: scale(1.1);
   }
 }
 

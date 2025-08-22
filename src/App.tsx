@@ -123,23 +123,30 @@ function App() {
                   </div>
                 </div>
                 
-                {/* Central Pulsing Button */}
+                {/* Central Pulsing Button - UPDATED */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="relative w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-lg shadow-cyan-400/50 hover:shadow-cyan-400/70 transition-all duration-300 group animate-pulse">
-                    {/* Inner glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-300 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                  <div className="relative">
+                    {/* Outer pulsing ring */}
+                    <div className="absolute inset-0 w-24 h-24 rounded-full border-2 border-cyan-400/50 animate-ping" />
                     
-                    {/* Pulsing ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-cyan-400 animate-ping opacity-75" />
+                    {/* Middle rotating ring */}
+                    <div className="absolute inset-2 w-20 h-20 rounded-full border border-cyan-300/30 animate-spin" style={{ animationDuration: '3s' }} />
                     
-                    {/* Button content */}
-                    <div className="relative z-10 flex items-center justify-center w-full h-full">
-                      <div className="w-3 h-3 rounded-full bg-white animate-pulse" />
-                    </div>
-                    
-                    {/* Outer glow ring */}
-                    <div className="absolute -inset-2 rounded-full border border-cyan-400/30 animate-spin" style={{ animationDuration: '3s' }} />
-                  </button>
+                    {/* Main button */}
+                    <button className="relative w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 via-cyan-500 to-blue-600 shadow-2xl shadow-cyan-400/60 hover:shadow-cyan-400/80 transition-all duration-300 group animate-pulse-glow">
+                      {/* Inner glow effect */}
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-300 to-blue-400 opacity-20 group-hover:opacity-40 transition-opacity duration-300 animate-pulse" />
+                      
+                      {/* Button content - pulsing center dot */}
+                      <div className="relative z-10 flex items-center justify-center w-full h-full">
+                        <div className="w-4 h-4 rounded-full bg-white animate-pulse shadow-lg shadow-white/50" />
+                      </div>
+                      
+                      {/* Additional glow rings */}
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/20 animate-ping" />
+                      <div className="absolute -inset-3 rounded-full border border-cyan-400/20 animate-pulse" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -196,6 +203,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App
